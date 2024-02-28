@@ -14,26 +14,43 @@
     <header>
         <h1 class="text-6xl font-bold text-center">Hunting Phone</h1>
     </header>
-    <main class = "container mx-auto mt-10 ">
+    <main class="container mx-auto mt-10 ">
         <!-- search section -->
         <section class=" p-4 m-4">
-            <input id ="search-field" type="text" placeholder="search" class="input input-bordered w-full max-w-xs" />
+            <input id="search-field" type="text" placeholder="search" class="input input-bordered w-full max-w-xs" />
             <button onclick="handleSearch()" class="btn btn-accent">Search</button>
         </section>
-        
+
         <!-- Search Results -->
         <section>
             <!-- Spinner or Loader -->
-            <div id ="loading-spinner" class="text-center my-40 hidden">
+            <div id="loading-spinner" class="text-center my-40 hidden">
                 <span class="loading loading-spinner loading-lg text-pr"></span>
             </div>
-            <div id="phone-container" class ="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             </div>
             <!-- Show All Button -->
             <div id="show-all-container" class=" text-center mt-4 hidden">
-                <button class="btn btn-accent ">Show All</button>
+                <button onclick="handleShowAll()" class="btn btn-accent ">Show All</button>
             </div>
         </section>
+        <!-- Show Details Modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="show_details_modal.showModal()">open modal</button> -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3  id="show-detail-phone-name" class="font-bold text-3xl text-center"></h3>
+                <div class="flex flex-col justify-center items-center mt-4 space-y-4" id="show-detail-container">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
     </main>
     <footer>
 
